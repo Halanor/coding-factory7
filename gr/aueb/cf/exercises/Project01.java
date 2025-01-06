@@ -7,16 +7,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class lotto {
+public class Project01 {
 
     public static void main(String[] args) {
         try (Scanner in = new Scanner(new File("C:\\Users\\Christopher\\Documents\\Coding factory\\Java\\numbers.txt"));
              PrintStream ps = new PrintStream("C:\\Users\\Christopher\\Documents\\Coding factory\\Java\\numbers_filtered.txt", StandardCharsets.UTF_8)) {
 
-            final int LOTTO_SIZE = 6;
+            final int COMBINATION_SIZE = 6;
             int[] inputNumbers = new int[49];
             int pivot = 0;
-            int[] result = new int[LOTTO_SIZE];
+            int[] result = new int[COMBINATION_SIZE];
             int num;
             int window;
 
@@ -35,7 +35,7 @@ public class lotto {
             int[] numbers = Arrays.copyOfRange(inputNumbers, 0, pivot);
             Arrays.sort(numbers);
 
-            window = pivot - LOTTO_SIZE;
+            window = pivot - COMBINATION_SIZE;
             for (int i = 0; i <= window; i++) {
                 for (int j = i + 1; j <= window + 1; j++) {
                     for (int k = j + 1; k <= window + 2; k++) {
